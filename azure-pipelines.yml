@@ -23,6 +23,11 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
+    backendServiceArm: 'Mussrat - Free Trial(f6a7adc2-197c-4935-8b0c-2a8b39cc51b7)'
+    backendAzureRmResourceGroupName: 'MainRG'
+    backendAzureRmStorageAccountName: 'mibtfstate'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'dev.terraform.tfstate'
 
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: terraform plan
