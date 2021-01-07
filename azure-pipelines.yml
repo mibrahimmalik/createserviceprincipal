@@ -18,7 +18,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: TerraformTaskV1@0
+- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   inputs:
     provider: 'azurerm'
     command: 'init'
