@@ -18,16 +18,15 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
-  displayName: 'terraform init'
+- task: TerraformTaskV1@0
   inputs:
     provider: 'azurerm'
     command: 'init'
-    backendServiceArm: 'Mussrat - Free Trial(f6a7adc2-197c-4935-8b0c-2a8b39cc51b7)'
     backendAzureRmResourceGroupName: 'MainRG'
-    backendAzureRmStorageAccountName: 'mibtfstate'
+    backendAzureRmStorageAccountName: 'abrtfstate'
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'dev.terraform.tfstate'
+    backendServiceArm: 'AbdulMunim'
 
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: terraform plan
