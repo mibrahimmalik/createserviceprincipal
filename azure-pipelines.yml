@@ -18,18 +18,22 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: TerraformTaskV1@0
+- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
+  displayName: 'terraform init'
   inputs:
     provider: 'azurerm'
     command: 'init'
 
-- task: TerraformTaskV1@0
+- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
+  displayName: terraform plan
   inputs:
     provider: 'azurerm'
     command: 'plan'
+    commandOptions: -lock=false -input=false
 
-- task: TerraformTaskV1@0
+- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
+  displayName: terraform apply
   inputs:
     provider: 'azurerm'
     command: 'apply'
-    commandOptions: '--auto-approve'
+    commandOptions: -lock=false -input=false
