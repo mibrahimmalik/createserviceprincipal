@@ -6,6 +6,14 @@ terraform {
       version = ">= 2.26"
     }
   } 
+
+  backend "azurerm" {
+    resource_group_name  = "MainRG"
+    storage_account_name = "mittfstate"
+    container_name       = "tfstate"
+    key                  = "dev.terraform.tfstate"
+  }
+
 }
 
 provider "azurerm" {
@@ -27,7 +35,7 @@ provider "azuread" {
   #tenant_id = var.tenant_id
 }
 
-resource "azuread_application" "myappreg" {
+resource "azuread_application" "appreg" {
   name                       = "appreg"
   homepage                   = "http://localhost"
   identifier_uris            = ["http://localhost"]
