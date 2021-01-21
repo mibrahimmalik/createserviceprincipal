@@ -36,7 +36,7 @@ provider "azuread" {
 }
 
 resource "azuread_application" "appreg" {
-  name                       = "appreg"
+  diplay_name                       = "appreg"
   homepage                   = "http://localhost"
   identifier_uris            = ["http://localhost"]
   reply_urls                 = ["http://localhost"]
