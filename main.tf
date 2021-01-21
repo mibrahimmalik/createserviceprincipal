@@ -27,7 +27,7 @@ provider "azuread" {
   #tenant_id = var.tenant_id
 }
 
-resource "azuread_application" "appreg" {
+resource "azuread_application" "myappreg" {
   name                       = "appreg"
   homepage                   = "http://localhost"
   identifier_uris            = ["http://localhost"]

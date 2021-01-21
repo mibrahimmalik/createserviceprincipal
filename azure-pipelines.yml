@@ -24,10 +24,10 @@ steps:
     provider: 'azurerm'
     command: 'init'
     backendAzureRmResourceGroupName: 'MainRG'
-    backendAzureRmStorageAccountName: 'abrtfstate'
+    backendAzureRmStorageAccountName: 'mittfstate'
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'dev.terraform.tfstate'
-    backendServiceArm: 'AbdulMunim'
+    backendServiceArm: 'nbs'
 
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
   displayName: terraform plan
@@ -35,7 +35,7 @@ steps:
     provider: 'azurerm'
     command: 'plan'
     commandOptions: -lock=false -input=false
-    environmentServiceNameAzureRM: 'AbdulMunim'
+    environmentServiceNameAzureRM: 'nbs'
 
 
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
@@ -44,4 +44,4 @@ steps:
     provider: 'azurerm'
     command: 'apply'
     commandOptions: -lock=false -input=false
-    environmentServiceNameAzureRM: 'AbdulMunim'
+    environmentServiceNameAzureRM: 'nbs'
